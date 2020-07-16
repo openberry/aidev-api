@@ -1,0 +1,30 @@
+# Generals
+.DS_Store
+.idea
+*.iml
+
+# Deps
+vendor/**
+
+# Temporary files
+tmp/
+
+# Build releases
+release-*/**
+*.tgz
+
+# PKI
+*.bin
+*.crt
+*.csr
+*.cer
+*.pem
+*.key
+!**/testdata/*.cer
+!**/testdata/*.pem
+
+# Secret data
+secret*
+
+# Default data store
+data
