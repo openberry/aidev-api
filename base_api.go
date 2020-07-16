@@ -77,42 +77,21 @@ type AddAppointmentResponse struct {
 	Token         string `json:"token"`
 }
 
-type ResultOrganization struct {
-	ID   string `json:"idOrganizacion"`
-	Name string `json:"nombre"`
-}
-
-type ResultCabin struct {
-	ID   string `json:"idOrganizacion"`
-	Name string `json:"nombre"`
-}
-
-type ResultScore struct {
-	StudyID           string  `json:"idEstudio"`
-	RiskArea          string  `json:"area_riesgo"`
-	Date              string  `json:"fecha_elaboracion"`
-	Points            string  `json:"datos_obtenidos"`
-	ExpectedAnswers   string  `json:"respuestas_esperadas"`
-	UnexpectedAnswers float64 `json:"respuestas_no_esperadas"`
-}
-
-type ResultQuestion struct {
-	ID           string `json:"idTask"`
-	GSR          string `json:"gsr"`
-	BVP          string `json:"bvp"`
-	EyeLP        string `json:"eyeLp"`
-	EyeRP        string `json:"eyeRp"`
-	Blink        string `json:"eyeBlink"`
-	ResponseTime string `json:"responseTime"`
-	Responded    string `json:"resp"`
-	Valid        string `json:"valid"`
-}
-
 type ResultsResponse struct {
-	Organization ResultOrganization `json:"organizacion"`
-	Cabin        ResultCabin        `json:"cabina"`
-	Score        ResultScore        `json:"resultado"`
-	Questions    []ResultQuestion   `json:"preguntas"`
+	AppointmentID    string `json:"idCita"`
+	CabinID          string `json:"idCabina"`
+	StudyID          string `json:"idEstudio"`
+	PersonID         string `json:"idPersona"`
+	Title            string `json:"title"`
+	Performed        string `json:"realizado"`
+	TotalQuestions   string `json:"totalPreguntas"`
+	CorrectQuestions string `json:"respuestaCorrectas"`
+	Approved         string `json:"aprobado"` // 1 = yes, 2 = no
+	Accuracy         string `json:"veracidad"`
+	Result           string `json:"resultado"`
+	Tendency         string `json:"tendencia"`
+	DataDescription  string `json:"datos"`
+	Instructions     string `json:"instrucciones"`
 }
 
 func (h *baseAPI) GetToken(user, pass string) (string, error) {

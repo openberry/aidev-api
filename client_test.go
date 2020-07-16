@@ -97,7 +97,7 @@ func TestNewClient(t *testing.T) {
 	})
 
 	t.Run("GetResults", func(t *testing.T) {
-		res, err := cl.BaseAPI.GetResults(7)
+		res, err := cl.BaseAPI.GetResults(1)
 		if err != nil {
 			t.Error(err)
 		} else {
